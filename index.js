@@ -38,7 +38,8 @@ app.post('/webhook', async (req, res) => {
             result = await ticketHandler(req.body);
         }
 
-        res.json(result);
+        // res.json(result);
+        res.sendStatus(200)
     } catch (e) {
         res.status(500).json({ error: e.message });
     }
